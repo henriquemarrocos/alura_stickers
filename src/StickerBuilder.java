@@ -10,11 +10,6 @@ import javax.imageio.ImageIO;
 public class StickerBuilder {
     
     public void build(InputStream inputStream, String fileName) throws IOException {
-        // Reads the image from a local folder
-        //InputStream inputStream = new FileInputStream(new File("input/movie.jpg"));
-        
-        // Reads the image from a URL
-        //InputStream inputStream = new URL("https://bl.cwa.sellercloud.com/images/products/4529884.jpg").openStream();
                 
         BufferedImage originalImage = ImageIO.read(inputStream);
 
@@ -37,10 +32,10 @@ public class StickerBuilder {
         }
 
         // Writes text on the image
-        var font = new Font(Font.SANS_SERIF, Font.BOLD, 64);
+        var font = new Font(Font.SANS_SERIF, Font.BOLD, 48);
         graphics.setColor(Color.YELLOW);
         graphics.setFont(font);
-        graphics.drawString(title, 150, newHeight - 100);
+        graphics.drawString(title, 125, newHeight - 100);
 
         // Saves the new image to a file
         ImageIO.write(newImage, "png", new File("output/" + fileName));
