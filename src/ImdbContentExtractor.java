@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class NasaContentExtractor implements ContentExtractor {
+public class ImdbContentExtractor implements ContentExtractor{
     
     public List<Content> extractsContent(String json) {
 
@@ -14,8 +14,8 @@ public class NasaContentExtractor implements ContentExtractor {
 
         for (Map<String, String> atributes : atributesList) {
             String title = atributes.get("title");
-            String imageUrl = atributes.get("url");
-            
+            String imageUrl = atributes.get("image")
+                .replaceAll("(@+)(.*).jpg$", "$1.jpg");
             var content = new Content(title, imageUrl);
 
             contentsList.add(content);

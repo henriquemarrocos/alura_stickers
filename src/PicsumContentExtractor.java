@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class NasaContentExtractor implements ContentExtractor {
+public class PicsumContentExtractor implements ContentExtractor{
     
     public List<Content> extractsContent(String json) {
 
@@ -13,8 +13,8 @@ public class NasaContentExtractor implements ContentExtractor {
         List<Content> contentsList = new ArrayList<>();
 
         for (Map<String, String> atributes : atributesList) {
-            String title = atributes.get("title");
-            String imageUrl = atributes.get("url");
+            String title = atributes.get("author");
+            String imageUrl = atributes.get("download_url");
             
             var content = new Content(title, imageUrl);
 

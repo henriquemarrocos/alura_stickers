@@ -35,7 +35,7 @@ public class StickerBuilder {
         var font = new Font(Font.SANS_SERIF, Font.BOLD, 48);
         graphics.setColor(Color.YELLOW);
         graphics.setFont(font);
-        graphics.drawString(title, 125, newHeight - 100);
+        graphics.drawString(title, 50, newHeight - 100);
 
         // Saves the new image to a file
         ImageIO.write(newImage, "png", new File("output/" + fileName));

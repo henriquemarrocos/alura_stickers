@@ -23,7 +23,5 @@ public class ImportHttpClient {
             throw new RuntimeException(ex);
 
         }
-
     }
-
 }
